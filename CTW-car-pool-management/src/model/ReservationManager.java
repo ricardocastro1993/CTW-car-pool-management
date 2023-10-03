@@ -37,6 +37,7 @@ public class ReservationManager {
 	}
 
 	public void printReservations() {
+		System.out.println("Reservas:");
 		for (Reservation reservation : reservations) {
 			System.out.println(reservation);
 		}
