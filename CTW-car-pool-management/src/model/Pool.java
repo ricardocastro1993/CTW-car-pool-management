@@ -33,8 +33,7 @@ public class Pool {
 			details = "Brand: " + car.getBrand() + "\nModel: " + car.getModel() + "\nSeats: " + car.getSeats()
 					+ "\nLicense plate: " + car.getLicensePlate() + "\nEngine type: " + car.getEngineType()
 					+ "\nCurrent autonomy: " + car.getCurrentAutonomy() + "km";
-		} 
-		else {
+		} else {
 			details = "The car does not belong to the pool!";
 		}
 		return details;
@@ -149,7 +148,22 @@ public class Pool {
 				break;
 
 			case 6:
-				//TBD
+				System.out.println("Insert pickup date and hour:");
+				String pickUpDate1 = scanner.nextLine();
+				System.out.println("Insert drop-off date and hour:");
+				String dropOffDate1 = scanner.nextLine();
+
+				car = getCarByBrandAndModel();
+
+				List<Reservation> listOfReservations = reservationManager.getReservations(car, pickUpDate1,
+						dropOffDate1);
+
+				// Print reserve history
+				for (Reservation r : listOfReservations) {
+					System.out.println(r);
+				}
+
+				break;
 
 			case 0:
 				break;
